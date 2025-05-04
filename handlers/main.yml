@@ -1,6 +1,10 @@
 ---
 # handlers file for artifactory
 
+- name: systemctl daemon-reload
+  ansible.builtin.systemd:
+    daemon_reload: true
+
 - name: Restart artifactory
   ansible.builtin.service:
     name: artifactory
