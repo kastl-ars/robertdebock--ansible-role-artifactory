@@ -1,0 +1,12 @@
+[Unit]
+Description=Artifactory service
+After=network.target
+
+[Service]
+Type=oneshot
+SuccessExitStatus=143
+ExecStart=/opt/jfrog/artifactory/app/bin/artifactoryManage.sh start
+ExecStop=/opt/jfrog/artifactory/app/bin/artifactoryManage.sh stop
+
+[Install]
+WantedBy=multi-user.target
